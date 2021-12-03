@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar_custom {
+  background-color: darkgreen;
+}
+
+.navbar_custom .navbar-nav .nav-item .nav-link {
+  color: white;
+}
+
+.navbar_custom .navbar-nav .nav-item .nav-link:hover{
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-toggler-button-custom{
+  border-right: 2px;
+}
