@@ -4,10 +4,14 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  margin-top: 0.2em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .navbar_custom {
   background-color: darkgreen;
+  border-radius: 10px;
 }
 
 .navbar_custom .navbar-nav .nav-item .nav-link {
@@ -18,9 +22,14 @@ body {
   border: 1px solid white;
   border-radius: 5px;
   color: white;
-  font-weight: bold;
 }
 
-.navbar-toggler-button-custom{
-  border-right: 2px;
+.custom_toggler {
+  margin-right: 1em;
+}
+
+.dropdown-custom {
+  text-align: center;
+  margin-right: 1em;
+  margin-left: 1em;
 }
