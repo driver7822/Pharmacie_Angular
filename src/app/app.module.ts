@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { MedicamentsComponent } from './components/medicaments/medicaments.component';
 import { MedecinsComponent } from './components/medecins/medecins.component';
 import { PatientsComponent } from './components/patients/patients.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { PatientsComponent } from './components/patients/patients.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
