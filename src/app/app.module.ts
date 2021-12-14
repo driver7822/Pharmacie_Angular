@@ -11,6 +11,7 @@ import { PatientsComponent } from './components/patients/patients.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { NewmedicamentComponent } from './components/newmedicament/newmedicament.component';
+import { EditmedicamentComponent } from './components/editmedicament/editmedicament.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NewmedicamentComponent } from './components/newmedicament/newmedicament
     MedicamentsComponent,
     MedecinsComponent,
     PatientsComponent,
-    NewmedicamentComponent
+    NewmedicamentComponent,
+    EditmedicamentComponent
   ],
   imports: [
     BrowserModule,

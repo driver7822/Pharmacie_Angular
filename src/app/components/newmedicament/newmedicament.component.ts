@@ -27,7 +27,7 @@ export class NewmedicamentComponent implements OnInit {
       return;
     }
     this.medicamentsService.save(this.medicamentFormGroup?.value).subscribe(
-      data => alert('Sauvegarde éffectuée'),
+      data => alert('Sauvegarde effectuée'),
       error => {
         alert(error.headers.get("error"));
       }

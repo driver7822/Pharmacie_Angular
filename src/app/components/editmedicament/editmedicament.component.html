@@ -1,0 +1,54 @@
+<div class="container" style="margin-top: 1em">
+  <form [formGroup]="medicamentFormGroup" *ngIf="medicamentFormGroup">
+    <div class="form-group">
+      <label>ID Medicament</label>
+      <input type="text" class="form-control" formControlName="idmedicament" readonly>
+    </div>
+
+    <div class = "form-group">
+      <label>Code</label>
+      <input type ="text" class="form-control" formControlName="code" [ngClass]="{'is-invalid': submitted && medicamentFormGroup.controls.code.errors}">
+      <div *ngIf="submitted && medicamentFormGroup.controls.code.errors" class="invalid-feedback">
+        <div *ngIf="medicamentFormGroup.controls.code.errors.required">
+          Code obligatoire
+        </div>
+      </div>
+    </div>
+    <div class = "form-group">
+      <label>Nom</label>
+      <input type ="text" class="form-control" formControlName="nom" [ngClass]="{'is-invalid': submitted && medicamentFormGroup.controls.nom.errors}">
+      <div *ngIf="submitted && medicamentFormGroup.controls.nom.errors" class ="invalid-feedback">
+        <div *ngIf="medicamentFormGroup.controls.nom.errors.required">
+          Nom obligatoire
+        </div>
+      </div>
+    </div>
+    <div class = "form-group">
+      <label>Description</label>
+      <input type ="text" class="form-control" formControlName="description" [ngClass]="{'is-invalid': submitted && medicamentFormGroup.controls.description.errors}">
+      <div *ngIf="submitted && medicamentFormGroup.controls.description.errors" class ="invalid-feedback">
+        <div *ngIf="medicamentFormGroup.controls.description.errors.required">
+          Description obligatoire
+        </div>
+      </div>
+    </div>
+    <div class = "form-group">
+      <label>Prix Unitaire</label>
+      <input type ="text" class="form-control" formControlName="prixunitaire" [ngClass]="{'is-invalid': submitted && medicamentFormGroup.controls.prixunitaire.errors}">
+      <div *ngIf="submitted && medicamentFormGroup.controls.prixunitaire.errors" class="invalid-feedback">
+        <div *ngIf="medicamentFormGroup.controls.prixunitaire.errors.required">
+          Prix unitaire obligatoire
+        </div>
+        <div *ngIf="medicamentFormGroup.controls.prixunitaire.errors.min">
+          Le prix doit être supérieur à 0
+        </div><!--
+        <div *ngIf="medicamentFormGroup.controls.cp.errors.max">
+          le code postal doit être inférieur ou égal à 9999
+        </div>-->
+      </div>
+    </div>
+    <button (click)="onUpdateMedicament()" class="btn btn-success" style="margin-top: 1em">
+      Save
+    </button>
+  </form>
+</div>

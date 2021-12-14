@@ -42,7 +42,7 @@ export class MedicamentsComponent implements OnInit {
   }
 
   onEdit(m: Medicament){
-
+    this.router.navigateByUrl('editMedicament/'+m.idmedicament);
   }
 
 }
