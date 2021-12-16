@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import {Patient} from "../entities/patient.entites";
 
 @Injectable({providedIn:"root"}) //providedIn:"root" permet de rendreaccessible cette classe partout dans l'application
-export class ClientsService{
+export class PatientsService{
   private host = environment.host;
   constructor(private http: HttpClient) {
   }
@@ -13,11 +13,11 @@ export class ClientsService{
     return this.http.get<Patient>(this.host + '/patients/' + idpatient);
   }
 
-  searchClients(nom: string): Observable<Patient[]>{
+  searchPatients(nom: string): Observable<Patient[]>{
     return this.http.get<Patient[]>(this.host + '/patients/nom=' + nom);
   }
 
-  deleteClient(p: Patient): Observable<void>{
+  deletePatient(p: Patient): Observable<void>{
     return this.http.delete<void>(this.host + '/patients/' + p.idpatient);
   }
 
@@ -25,7 +25,7 @@ export class ClientsService{
     return this.http.post<Patient>(this.host + '/patients/', p);
   }
 
-  updateClient(p: Patient): Observable<Patient>{
+  updatePatient(p: Patient): Observable<Patient>{
     return this.http.put<Patient>(this.host + '/patients/' + p.idpatient, p);
   }
 }

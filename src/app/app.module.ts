@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { NewmedicamentComponent } from './components/newmedicament/newmedicament.component';
 import { EditmedicamentComponent } from './components/editmedicament/editmedicament.component';
+import { NewpatientComponent } from './components/newpatient/newpatient.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EditmedicamentComponent } from './components/editmedicament/editmedicam
     MedecinsComponent,
     PatientsComponent,
     NewmedicamentComponent,
-    EditmedicamentComponent
+    EditmedicamentComponent,
+    NewpatientComponent
   ],
   imports: [
     BrowserModule,

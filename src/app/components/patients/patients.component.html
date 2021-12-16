@@ -1,1 +1,53 @@
-<p>patients works!</p>
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+  <ul class="navbar navbar-nav">
+    <li>
+      <form #f="ngForm" (ngSubmit)="onSearch(f.value)" class="form-inline">
+        <input ngModel name="nom" type="text" >
+        <button class="btn btn-sm btn-outline-info m-lg-2">
+ <span class = "fa fa-search">
+ </span>
+        </button>
+      </form>
+    </li>
+    <li>
+      <button (click)="onNewPatient()" class="btn btn-sm btn-outline-infoms-2">New</button>
+    </li>
+  </ul>
+</nav>
+<ng-container *ngIf="patients">
+  <ng-container *ngIf="patients.length>0 else inconnu">
+    <table class="table">
+      <thead>
+      <th>ID Patient</th>
+      <th>NSS</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Date de naissance</th>
+      <th>Del</th>
+      <th>Edit</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of patients">
+        <td>{{p.idpatient}}</td>
+        <td>{{p.nss}}</td>
+        <td>{{p.nom}}</td>
+        <td>{{p.prenom}}</td>
+        <td>{{p.datenaissance}}</td>
+        <td>
+          <button (click)=onDelete(p) class="btn btn-danger">
+            <span class = "fa fa-trash-o"></span>
+          </button>
+        </td>
+        <td>
+          <button (click)=onEdit(p) class="btn btn-danger">
+            <span class = "fa fa-edit"></span>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-template #inconnu>
+    Nom inconnu
+  </ng-template>
+</ng-container>
