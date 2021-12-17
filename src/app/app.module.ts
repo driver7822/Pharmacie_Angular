@@ -13,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { NewmedicamentComponent } from './components/newmedicament/newmedicament.component';
 import { EditmedicamentComponent } from './components/editmedicament/editmedicament.component';
 import { NewpatientComponent } from './components/newpatient/newpatient.component';
+import { EditpatientComponent } from './components/editpatient/editpatient.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NewpatientComponent } from './components/newpatient/newpatient.componen
     PatientsComponent,
     NewmedicamentComponent,
     EditmedicamentComponent,
-    NewpatientComponent
+    NewpatientComponent,
+    EditpatientComponent
   ],
   imports: [
     BrowserModule,

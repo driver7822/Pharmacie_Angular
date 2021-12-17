@@ -36,10 +36,7 @@
         </div>
         <div *ngIf="medicamentFormGroup.controls.prixunitaire.errors.min">
           Le prix doit être supérieur à 0
-        </div><!--
-        <div *ngIf="medicamentFormGroup.controls.cp.errors.max">
-          le code postal doit être inférieur ou égal à 9999
-        </div>-->
+        </div>
       </div>
     </div>
     <button (click)="onSaveMedicament()" class="btn btn-success" style="margin-top: 1em">

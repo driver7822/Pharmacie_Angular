@@ -9,7 +9,7 @@ export class PatientsService{
   private host = environment.host;
   constructor(private http: HttpClient) {
   }
-  getClient(idpatient: number): Observable<Patient>{
+  getPatient(idpatient: number): Observable<Patient>{
     return this.http.get<Patient>(this.host + '/patients/' + idpatient);
   }
 

@@ -32,7 +32,7 @@
         <td>{{p.nss}}</td>
         <td>{{p.nom}}</td>
         <td>{{p.prenom}}</td>
-        <td>{{p.datenaissance}}</td>
+        <td>{{p.datenaissance |date:'dd/MM/yyyy'}}</td>
         <td>
           <button (click)=onDelete(p) class="btn btn-danger">
             <span class = "fa fa-trash-o"></span>

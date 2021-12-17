@@ -1,0 +1,81 @@
+<div class="container">
+  <form [formGroup]="patientFormGroup" *ngIf="patientFormGroup">
+
+    <div class="row">
+      <div class="form-group col-6">
+        <label>ID Patient</label>
+        <input type="text" class="form-control" formControlName="idpatient" readonly>
+      </div>
+      <div class = "form-group col-6">
+        <label>NSS</label>
+        <input type ="text" class="form-control" formControlName="nss" [ngClass]="{'is-invalid': submitted && patientFormGroup.controls.nss.errors}">
+        <div *ngIf="submitted && patientFormGroup.controls.nss.errors" class="invalid-feedback">
+          <div *ngIf="patientFormGroup.controls.nss.errors.required">
+            NSS obligatoire
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class = "form-group">
+      <label>Nom</label>
+      <input type ="text" class="form-control" formControlName="nom" [ngClass]="{'is-invalid': submitted && patientFormGroup.controls.nom.errors}">
+      <div *ngIf="submitted && patientFormGroup.controls.nom.errors" class ="invalid-feedback">
+        <div *ngIf="patientFormGroup.controls.nom.errors.required">
+          Nom obligatoire
+        </div>
+      </div>
+    </div>
+    <div class = "form-group">
+      <label>Prenom</label>
+      <input type ="text" class="form-control" formControlName="prenom" [ngClass]="{'is-invalid': submitted && patientFormGroup.controls.prenom.errors}">
+      <div *ngIf="submitted && patientFormGroup.controls.prenom.errors" class ="invalid-feedback">
+        <div *ngIf="patientFormGroup.controls.prenom.errors.required">
+          Prénom obligatoire
+        </div>
+      </div>
+    </div>
+    <div class = "form-group">
+      <label>Date de naissance</label>
+      <input type ="text" class="form-control" formControlName="datenaissance" [ngClass]="{'is-invalid': submitted && patientFormGroup.controls.datenaissance.errors}">
+      <div *ngIf="submitted && patientFormGroup.controls.datenaissance.errors" class="invalid-feedback">
+        <div *ngIf="patientFormGroup.controls.datenaissance.errors.required">
+          Date de naissance obligatoire
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <ul class="navbar navbar-nav">
+        <li class="nav-item">
+          <button (click)="onUpdatePatient()" class="btn btn-success">
+            Save
+          </button>
+        </li>
+        <li class="nav-item">
+          <button (click)="onSeePrescription()" class="btn btn-success">
+            Prescriptions
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </form>
+  <ng-container *ngIf="prescriptions" >
+    <ng-container *ngIf="prescriptions.length>0 else vide">
+      <table class="table">
+        <thead>
+        <th>ID Prescription</th>
+        <th>date</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let pres of prescriptions">
+          <td>{{pres.idprescription}}</td>
+          <td>{{pres.dateprescription | date:'dd/MM/yyyy'}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </ng-container>
+    <ng-template #vide>
+      Aucune prescription pour ce patient
+    </ng-template>
+  </ng-container>
+</div>
