@@ -4,6 +4,9 @@ import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
 import {formatDate} from '@angular/common';
 import {Prescription} from "../entities/prescription.entities";
+import {Patient} from "../entities/patient.entites";
+import {Medecin} from "../entities/medecin.entities";
+
 @Injectable({providedIn:"root"})
 export class PrescriptionsService{
   private host = environment.host;
@@ -13,10 +16,11 @@ export class PrescriptionsService{
     return this.http.delete<void>(this.host + '/prescriptions/' + p.idprescription);
   }
 
-  /*save(c: Comfact,cl:Client): Observable<Comfact>{
-    c.client=cl;
-    return this.http.post<Comfact>(this.host + '/prescriptions/',c);
-  }*/
+  save(pres: Prescription,med: Medecin, pat: Patient): Observable<Prescription>{
+    pres.patient = pat;
+    pres.medecin = med;
+    return this.http.post<Prescription>(this.host + '/prescriptions/',pres);
+  }
 
   getPrescription(idprescription: number): Observable<Prescription>{
     return this.http.get<Prescription>(this.host + '/prescriptions/' + idprescription);

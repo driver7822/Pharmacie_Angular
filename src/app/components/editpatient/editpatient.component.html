@@ -65,11 +65,14 @@
         <thead>
         <th>ID Prescription</th>
         <th>date</th>
+        <th>Nom du Medecin</th>
         </thead>
         <tbody>
         <tr *ngFor="let pres of prescriptions">
           <td>{{pres.idprescription}}</td>
           <td>{{pres.dateprescription | date:'dd/MM/yyyy'}}</td>
+          <td *ngIf="pres.medecin.nom != undefined">{{pres.medecin.nom}} {{pres.medecin.prenom}}</td>
+          <td *ngIf="pres.medecin == undefined">Pas de medecin</td>
         </tr>
         </tbody>
       </table>
@@ -78,4 +81,5 @@
       Aucune prescription pour ce patient
     </ng-template>
   </ng-container>
+  <app-newprescription [patiact]="patientFormGroup" (newPrescription)="onAddPrescription($event)"></app-newprescription>
 </div>
