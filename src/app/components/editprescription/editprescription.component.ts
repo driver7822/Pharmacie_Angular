@@ -5,6 +5,7 @@ import {PrescriptionsService} from "../../services/prescriptions.service";
 import {Router} from "@angular/router";
 import {Medecin} from "../../entities/medecin.entities";
 import {MedecinsService} from "../../services/medecins.service";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-editprescription',
@@ -18,13 +19,13 @@ export class EditprescriptionComponent implements OnInit {
   deleted = false;
   med?: Medecin;
 
-  constructor(private prescriptionService: PrescriptionsService,private medecinService: MedecinsService,private fb: FormBuilder, private router: Router) { }
+  constructor(private prescriptionService: PrescriptionsService,private medecinService: MedecinsService,private fb: FormBuilder, private router: Router, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
 
     this.prescriptionFormGroup = this.fb.group({
       idprescription: [this.prescription?.idprescription],
-      dateprescription: [this.prescription?.dateprescription, Validators.required],
+      dateprescription : [this.datePipe.transform(this.prescription?.dateprescription,"yyyy-MM-dd"), Validators.required],
       nomdumed: [this.prescription?.medecin.nom+" "+this.prescription?.medecin?.prenom ],
     });
 

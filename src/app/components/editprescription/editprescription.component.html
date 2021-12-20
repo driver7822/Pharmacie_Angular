@@ -1,4 +1,4 @@
-<div class="container" *ngIf="deleted == false">
+<div class="container" *ngIf="deleted == false" style="margin-top: 1em">
   <form [formGroup]="prescriptionFormGroup" *ngIf="prescriptionFormGroup">
     <div class = "form-group">
       <label>ID de Prescription</label>
@@ -6,7 +6,7 @@
     </div>
     <div class = "form-group">
       <label>Date</label>
-      <input type ="text" class="form-control" formControlName="dateprescription" [ngClass]="{'is-invalid': submitted && prescriptionFormGroup.controls.dateprescription.errors}">
+      <input type ="date" class="form-control" formControlName="dateprescription" [ngClass]="{'is-invalid': submitted && prescriptionFormGroup.controls.dateprescription.errors}">
       <div *ngIf="submitted && prescriptionFormGroup.controls.dateprescription.errors" class ="invalid-feedback">
         <div *ngIf="prescriptionFormGroup.controls.dateprescription.errors.required">
           Date de prescription obligatoire
@@ -24,14 +24,14 @@
       </div>
     </div>
 
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <nav class="navbar navbar-expand-sm bg-light navbar-light" style="margin-top:1em ;border-radius: 1em">
       <ul class="navbar navbar-nav">
-        <li class="nav-item">
+        <li class="nav-item" style="margin-left: 1em">
           <button (click)="onUpdatePrescription()" class="btn btn-success">
             Save
           </button>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" style="margin-left: 1em">
           <button (click)="onDeletePrescription()" class="btn btn-success">
             Delete
           </button>

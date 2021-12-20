@@ -17,6 +17,7 @@ import { EditpatientComponent } from './components/editpatient/editpatient.compo
 import { NewprescriptionComponent } from './components/newprescription/newprescription.component';
 import { EditprescriptionComponent } from './components/editprescription/editprescription.component';
 import { PrescriptionComponent } from './components/prescription/prescription.component';
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -32,16 +33,16 @@ import { PrescriptionComponent } from './components/prescription/prescription.co
     EditpatientComponent,
     NewprescriptionComponent,
     EditprescriptionComponent,
-    PrescriptionComponent
+    PrescriptionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

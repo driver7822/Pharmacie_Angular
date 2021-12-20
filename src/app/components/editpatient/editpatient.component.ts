@@ -19,7 +19,7 @@ export class EditpatientComponent implements OnInit {
   prescriptions? :Prescription[]
 
 
-  constructor(private patientsService: PatientsService, private prescriptionsService: PrescriptionsService,private fb: FormBuilder, activatedRoute: ActivatedRoute, date: DatePipe) {
+  constructor(private patientsService: PatientsService, private prescriptionsService: PrescriptionsService,private fb: FormBuilder, activatedRoute: ActivatedRoute,private datePipe: DatePipe) {
     this.idPatient = activatedRoute.snapshot.params.idpatient;
   }
 
@@ -31,7 +31,7 @@ export class EditpatientComponent implements OnInit {
           nss: [patient.nss, Validators.required],
           nom: [patient.nom, Validators.required],
           prenom: [patient.prenom, Validators.required],
-          datenaissance : [patient.datenaissance, Validators.required]
+          datenaissance : [this.datePipe.transform(patient.datenaissance,"yyyy-MM-dd"), Validators.required]
         })
       }
     );
