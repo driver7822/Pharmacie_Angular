@@ -9,7 +9,7 @@
       <input type ="text" class="form-control" formControlName="dateprescription" [ngClass]="{'is-invalid': submitted && prescriptionFormGroup.controls.dateprescription.errors}">
       <div *ngIf="submitted && prescriptionFormGroup.controls.dateprescription.errors" class ="invalid-feedback">
         <div *ngIf="prescriptionFormGroup.controls.dateprescription.errors.required">
-          Date de commande obligatoire
+          Date de prescription obligatoire
         </div>
       </div>
     </div>
