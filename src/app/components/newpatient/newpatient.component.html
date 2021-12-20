@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin-top: 1em">
   <form [formGroup]="patientFormGroup" *ngIf="patientFormGroup">
     <div class = "form-group">
       <label>NSS</label>
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <button (click)="onSavePatient()" class="btn btn-success">
+    <button (click)="onSavePatient()" class="btn btn-success" style="margin-top: 1em">
       Save
     </button>
   </form>

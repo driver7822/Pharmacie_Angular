@@ -18,6 +18,8 @@ import { NewprescriptionComponent } from './components/newprescription/newprescr
 import { EditprescriptionComponent } from './components/editprescription/editprescription.component';
 import { PrescriptionComponent } from './components/prescription/prescription.component';
 import {DatePipe} from "@angular/common";
+import { EditmedecinComponent } from './components/editmedecin/editmedecin.component';
+import { NewmedecinComponent } from './components/newmedecin/newmedecin.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import {DatePipe} from "@angular/common";
     NewprescriptionComponent,
     EditprescriptionComponent,
     PrescriptionComponent,
+    EditmedecinComponent,
+    NewmedecinComponent,
   ],
   imports: [
     BrowserModule,
