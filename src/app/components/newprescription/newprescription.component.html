@@ -4,7 +4,7 @@
       <thead>
       <th>ID Prescription</th>
       <th>Date</th>
-      <th>ID Medecin</th>
+      <th>Médecin</th>
       </thead>
       <tbody>
       <td *ngIf="pres ;else vide">{{pres.idprescription}} </td>
@@ -15,7 +15,6 @@
         <input type ="date" class="form-control" formControlName="dateprescription">
       </td>
       <td>
-        <!--<input type ="text" class="form-control" formControlName="idmedecin">-->
         <select class="form-select" aria-label="Default select example" formControlName="idmedecin">
           <option *ngFor="let m of meds" value="{{m.idmedecin}}">{{m.nom}} {{m.prenom}}</option>
         </select>

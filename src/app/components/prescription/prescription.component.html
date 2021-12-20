@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSearch()" class="form-inline">
+  <label>ID de prescription</label>
+  <input [(ngModel)]="idprescription" name="idprescription" type="text" >
+  <button class="btn btn-sm btn-outline-info m-lg-2">
+    <span class = "fa fa-search"> </span>
+  </button>
+</form>
+<ng-container *ngIf="prescription">
+<app-editprescription [prescription] ="prescription"></app-editprescription>
+</ng-container>

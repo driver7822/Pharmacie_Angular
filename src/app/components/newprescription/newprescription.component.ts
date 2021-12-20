@@ -1,5 +1,5 @@
 import {Component,EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Prescription} from "../../entities/prescription.entities";
 import {PrescriptionsService} from "../../services/prescriptions.service";
 import {MedecinsService} from "../../services/medecins.service";
@@ -26,7 +26,7 @@ export class NewprescriptionComponent implements OnInit {
   ngOnInit(): void {
     this.prescriptionFormGroup = this.fb.group({
       dateprescription : [formatDate(new Date(), 'yyyy-MM-dd','en')],
-      idmedecin:['']
+      idmedecin:['', Validators.required]
     });
 
     this.medecinService.getMedecins().subscribe(

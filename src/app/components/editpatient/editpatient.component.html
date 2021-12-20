@@ -72,7 +72,6 @@
           <td>{{pres.idprescription}}</td>
           <td>{{pres.dateprescription | date:'dd/MM/yyyy'}}</td>
           <td *ngIf="pres.medecin.nom != undefined">{{pres.medecin.nom}} {{pres.medecin.prenom}}</td>
-          <td *ngIf="pres.medecin == undefined">Pas de medecin</td>
         </tr>
         </tbody>
       </table>
