@@ -31,8 +31,11 @@ export class PrescriptionsService{
   }
 
   getPrescriptionPatient(idPatient: number) : Observable<Prescription[]>{
-    return this.http.get<Prescription[]>(this.host + '/prescriptions/idpatient=' +
-      idPatient);
+    return this.http.get<Prescription[]>(this.host + '/prescriptions/idpatient=' + idPatient);
+  }
+
+  getPrescriptionMedecin(idMedecin: number) : Observable<Prescription[]>{
+    return this.http.get<Prescription[]>(this.host + '/prescriptions/idmedecin='+ idMedecin);
   }
 
 }

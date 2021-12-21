@@ -15,7 +15,7 @@
         <input type ="date" class="form-control" formControlName="dateprescription">
       </td>
       <td>
-        <select class="form-select" aria-label="Default select example" formControlName="idmedecin">
+        <select class="form-select" formControlName="idmedecin">
           <option *ngFor="let m of meds" value="{{m.idmedecin}}">{{m.nom}} {{m.prenom}}</option>
         </select>
       </td>

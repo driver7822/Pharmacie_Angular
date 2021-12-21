@@ -26,7 +26,8 @@ export class EditprescriptionComponent implements OnInit {
     this.prescriptionFormGroup = this.fb.group({
       idprescription: [this.prescription?.idprescription],
       dateprescription : [this.datePipe.transform(this.prescription?.dateprescription,"yyyy-MM-dd"), Validators.required],
-      nomdumed: [this.prescription?.medecin.nom+" "+this.prescription?.medecin?.prenom ],
+      nomdumed: [this.prescription?.medecin.nom+" "+this.prescription?.medecin.prenom ],
+      nomdupat: [this.prescription?.patient.nom+" "+this.prescription?.patient.prenom]
     });
 
   }

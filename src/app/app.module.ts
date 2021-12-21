@@ -17,7 +17,7 @@ import { EditpatientComponent } from './components/editpatient/editpatient.compo
 import { NewprescriptionComponent } from './components/newprescription/newprescription.component';
 import { EditprescriptionComponent } from './components/editprescription/editprescription.component';
 import { PrescriptionComponent } from './components/prescription/prescription.component';
-import {DatePipe} from "@angular/common";
+import { DatePipe } from "@angular/common";
 import { EditmedecinComponent } from './components/editmedecin/editmedecin.component';
 import { NewmedecinComponent } from './components/newmedecin/newmedecin.component';
 
