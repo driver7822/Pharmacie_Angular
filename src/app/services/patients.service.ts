@@ -13,6 +13,10 @@ export class PatientsService{
     return this.http.get<Patient>(this.host + '/patients/' + idpatient);
   }
 
+  getPatients(): Observable<Patient[]>{
+    return this.http.get<Patient[]>(this.host + '/patients/');
+  }
+
   searchPatients(nom: string): Observable<Patient[]>{
     return this.http.get<Patient[]>(this.host + '/patients/nom=' + nom);
   }

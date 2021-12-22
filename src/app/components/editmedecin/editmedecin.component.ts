@@ -52,4 +52,8 @@ export class EditmedecinComponent implements OnInit {
     )
   }
 
+  onAddPrescription(pr: Prescription){
+    this.prescriptions?.push(pr);
+  }
+
 }

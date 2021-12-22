@@ -1,0 +1,28 @@
+<div class="container">
+  <form [formGroup]="prescriptionFormGroup" *ngIf="prescriptionFormGroup">
+    <table class="table">
+      <thead>
+      <th>ID Prescription</th>
+      <th>Date</th>
+      <th>Patient</th>
+      </thead>
+      <tbody>
+      <td *ngIf="pres ;else vide">{{pres.idprescription}} </td>
+      <ng-template #vide>
+        <td></td>
+      </ng-template>
+      <td>
+        <input type ="date" class="form-control" formControlName="dateprescription">
+      </td>
+      <td>
+        <select class="form-select" formControlName="idpatient">
+          <option *ngFor="let p of pats" value="{{p.idpatient}}">{{p.nom}} {{p.prenom}}</option>
+        </select>
+      </td>
+      </tbody>
+    </table>
+    <button (click)="onSavePrescription()" class="btn btn-success">
+      Save
+    </button>
+  </form>
+</div>
