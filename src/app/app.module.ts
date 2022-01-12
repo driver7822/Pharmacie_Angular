@@ -21,6 +21,8 @@ import { DatePipe } from "@angular/common";
 import { EditmedecinComponent } from './components/editmedecin/editmedecin.component';
 import { NewmedecinComponent } from './components/newmedecin/newmedecin.component';
 import { NewprescriptionformedecinComponent } from './components/newprescriptionformedecin/newprescriptionformedecin.component';
+import { ExamenComponent } from './components/examen/examen.component';
+import { ExamenbonusComponent } from './components/examenbonus/examenbonus.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { NewprescriptionformedecinComponent } from './components/newprescription
     EditmedecinComponent,
     NewmedecinComponent,
     NewprescriptionformedecinComponent,
+    ExamenComponent,
+    ExamenbonusComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light" style="margin-top: 1em; border-radius: 1em">
+  <ul class="navbar navbar-nav">
+    <li>
+      <form #f="ngForm" (ngSubmit)="onSearch(f.value)" class="form-inline" style="margin-left: 1em;">
+        <label>ID du patient</label>
+        <input ngModel name="idDuPatient" type="text">
+        <button class="btn btn-sm btn-outline-info m-lg-2">
+            <span class = "fa fa-search">
+            </span>
+        </button>
+      </form>
+    </li>
+  </ul>
+</nav>
+<ng-container *ngIf="pres">
+  <ng-container *ngIf="pres.length>0">
+    <table class="table table-striped">
+      <thead>
+      <th>ID Prescription</th>
+      <th>Date de prescription</th>
+      <th>Nom et prénom du patient</th>
+      <th>Nom et prénom du medecin</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let p of pres">
+        <td>{{p.idprescription}}</td>
+        <td>{{p.dateprescription |date:'dd/MM/yyyy'}}</td>
+        <td>{{p.patient.nom}} {{p.patient.prenom}}</td>
+        <td>{{p.medecin.nom}} {{p.medecin.prenom}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </ng-container>

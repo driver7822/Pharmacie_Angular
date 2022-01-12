@@ -11,6 +11,8 @@ import {EditpatientComponent} from "./components/editpatient/editpatient.compone
 import {PrescriptionComponent} from "./components/prescription/prescription.component";
 import {EditmedecinComponent} from "./components/editmedecin/editmedecin.component";
 import {NewmedecinComponent} from "./components/newmedecin/newmedecin.component";
+import {ExamenComponent} from "./components/examen/examen.component";
+import {ExamenbonusComponent} from "./components/examenbonus/examenbonus.component";
 
 const routes: Routes = [
   {path : '', component: HomeComponent},
@@ -23,7 +25,10 @@ const routes: Routes = [
   {path : 'editPatient/:idpatient', component: EditpatientComponent},
   {path : 'prescriptions', component: PrescriptionComponent},
   {path : 'editMedecin/:idmedecin', component: EditmedecinComponent},
-  {path : 'newMedecin', component: NewmedecinComponent}
+  {path : 'newMedecin', component: NewmedecinComponent},
+  {path : 'examen', component: ExamenComponent},
+  {path : 'examenBonus', component: ExamenbonusComponent}
+
 ];
 
 @NgModule({
